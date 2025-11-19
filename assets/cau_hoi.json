@@ -1,0 +1,12 @@
+[
+  {
+    "cauhoi": "Thủ đô của Việt Nam là gì?",
+    "luachon": ["Hà Nội", "TP.HCM", "Đà Nẵng", "Huế"],
+    "dapan": 0
+  },
+  {
+    "cauhoi": "Flutter sử dụng ngôn ngữ nào?",
+    "luachon": ["Java", "Kotlin", "Dart", "C++"],
+    "dapan": 2
+  }
+]
