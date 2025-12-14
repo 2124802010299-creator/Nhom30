@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'man_hinh/trang_chu.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'auth/login_page.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const QuizApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Ứng dụng Quiz",
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TrangChu(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,12 +1,23 @@
-[
-  {
-    "cauhoi": "Thủ đô của Việt Nam là gì?",
-    "luachon": ["Hà Nội", "TP.HCM", "Đà Nẵng", "Huế"],
-    "dapan": 0
-  },
-  {
-    "cauhoi": "Flutter sử dụng ngôn ngữ nào?",
-    "luachon": ["Java", "Kotlin", "Dart", "C++"],
-    "dapan": 2
-  }
-]
+{
+  "toan_hoc": [
+    {
+      "question": "2 + 3 × 4 bằng bao nhiêu?",
+      "answers": ["20", "14", "24", "10"],
+      "correctIndex": 1
+    }
+  ],
+  "lich_su": [
+    {
+      "question": "Chiến thắng Bạch Đằng năm 938 do ai lãnh đạo?",
+      "answers": ["Ngô Quyền", "Trần Hưng Đạo", "Quang Trung", "Lý Thường Kiệt"],
+      "correctIndex": 0
+    }
+  ],
+  "tam_linh": [
+    {
+      "question": "Phật giáo có nguồn gốc từ quốc gia nào?",
+      "answers": ["Trung Quốc", "Ấn Độ", "Nepal", "Việt Nam"],
+      "correctIndex": 1
+    }
+  ]
+}
