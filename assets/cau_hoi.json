@@ -1,0 +1,50 @@
+{
+  "toan_hoc": [
+    {"question": "2 + 3 × 4 bằng bao nhiêu?", "answers": ["20", "14", "24", "10"], "correctIndex": 1},
+    {"question": "Căn bậc hai của 81 là?", "answers": ["7", "8", "9", "10"], "correctIndex": 2},
+    {"question": "Số nguyên tố nhỏ nhất là số nào?", "answers": ["0", "1", "2", "3"], "correctIndex": 2},
+    {"question": "Hình vuông có cạnh bằng 5 thì diện tích là?", "answers": ["10", "20", "25", "50"], "correctIndex": 2},
+    {"question": "Một giờ có bao nhiêu giây?", "answers": ["60", "360", "3600", "1200"], "correctIndex": 2},
+    {"question": "Số nào sau đây chia hết cho cả 2 và 5?", "answers": ["12", "15", "20", "22"], "correctIndex": 2},
+    {"question": "Kết quả của 100 ÷ 4 là?", "answers": ["20", "25", "30", "40"], "correctIndex": 1},
+    {"question": "Số Pi (π) xấp xỉ bằng bao nhiêu?", "answers": ["3.12", "3.14", "3.16", "3.18"], "correctIndex": 1},
+    {"question": "7 mũ 2 (7²) bằng bao nhiêu?", "answers": ["14", "49", "56", "42"], "correctIndex": 1},
+    {"question": "Trong tam giác vuông, bình phương cạnh huyền bằng gì?", "answers": ["Tổng hai cạnh", "Tích hai cạnh", "Tổng bình phương hai cạnh góc vuông", "Hiệu hai cạnh"], "correctIndex": 2}
+  ],
+  "lich_su": [
+    {"question": "Chiến thắng Bạch Đằng năm 938 do ai lãnh đạo?", "answers": ["Ngô Quyền", "Trần Hưng Đạo", "Quang Trung", "Lý Thường Kiệt"], "correctIndex": 0},
+    {"question": "Vị vua cuối cùng của triều đại phong kiến Việt Nam là ai?", "answers": ["Minh Mạng", "Tự Đức", "Bảo Đại", "Khải Định"], "correctIndex": 2},
+    {"question": "Bác Hồ đọc bản Tuyên ngôn Độc lập tại quảng trường nào?", "answers": ["Đông Kinh Nghĩa Thục", "Ba Đình", "Hòa Bình", "Lam Sơn"], "correctIndex": 1},
+    {"question": "Thủ đô Hà Nội kỷ niệm 1000 năm Thăng Long vào năm nào?", "answers": ["2000", "2005", "2010", "2015"], "correctIndex": 2},
+    {"question": "Ai là người anh hùng thiếu niên bóp nát quả cam vì không được dự bàn việc quân?", "answers": ["Kim Đồng", "Trần Quốc Toản", "Võ Thị Sáu", "Lê Văn Tám"], "correctIndex": 1},
+    {"question": "Chiến dịch Điện Biên Phủ kết thúc vào ngày tháng năm nào?", "answers": ["30/04/1975", "07/05/1954", "19/05/1890", "02/09/1945"], "correctIndex": 1},
+    {"question": "Vua nào đã dời đô từ Hoa Lư về Thăng Long?", "answers": ["Lý Thái Tổ", "Đinh Tiên Hoàng", "Lê Đại Hành", "Trần Thái Tông"], "correctIndex": 0},
+    {"question": "Trận 'Điện Biên Phủ trên không' diễn ra vào năm nào?", "answers": ["1968", "1972", "1975", "1979"], "correctIndex": 1},
+    {"question": "Quốc hiệu đầu tiên của nước ta là gì?", "answers": ["Đại Việt", "Văn Lang", "Âu Lạc", "Đại Cồ Việt"], "correctIndex": 1},
+    {"question": "Ngày giải phóng miền Nam, thống nhất đất nước là ngày nào?", "answers": ["2/9", "19/5", "30/4", "1/5"], "correctIndex": 2}
+  ],
+  "tam_linh": [
+    {"question": "Phật giáo có nguồn gốc từ quốc gia nào?", "answers": ["Trung Quốc", "Ấn Độ", "Nepal", "Việt Nam"], "correctIndex": 1},
+    {"question": "Trong 12 con giáp, con giáp nào đứng vị trí cuối cùng?", "answers": ["Thân", "Dậu", "Tuất", "Hợi"], "correctIndex": 3},
+    {"question": "Lễ hội Chùa Hương diễn ra tại tỉnh thành nào?", "answers": ["Hà Nội", "Hà Nam", "Ninh Bình", "Vĩnh Phúc"], "correctIndex": 0},
+    {"question": "Tết Trung Thu diễn ra vào ngày nào âm lịch?", "answers": ["15/1", "15/5", "15/8", "15/10"], "correctIndex": 2},
+    {"question": "Vị thần nào trong truyền thuyết Việt Nam giúp vua An Dương Vương xây thành Cổ Loa?", "answers": ["Thánh Gióng", "Sơn Tinh", "Kim Quy", "Thủy Tinh"], "correctIndex": 2},
+    {"question": "Ngày lễ Vu Lan báo hiếu diễn ra vào tháng mấy âm lịch?", "answers": ["Tháng 3", "Tháng 7", "Tháng 8", "Tháng 12"], "correctIndex": 1},
+    {"question": "Biểu tượng âm dương thường thấy trong đạo nào?", "answers": ["Đạo Phật", "Đạo Giáo", "Đạo Thiên Chúa", "Đạo Hồi"], "correctIndex": 1},
+    {"question": "Trong phong thủy, hành nào khắc với hành Hỏa?", "answers": ["Kim", "Mộc", "Thủy", "Thổ"], "correctIndex": 2},
+    {"question": "Ai là người tìm ra con đường giác ngộ và sáng lập ra Phật giáo?", "answers": ["Lão Tử", "Khổng Tử", "Tất Đạt Đa", "Chu Văn An"], "correctIndex": 2},
+    {"question": "Tượng Phật Di Lặc thường tượng trưng cho điều gì?", "answers": ["Sức mạnh", "Sự giàu có", "Niềm vui và hạnh phúc", "Sự nghiêm khắc"], "correctIndex": 2}
+  ],
+  "cong_nghe": [
+    {"question": "Ngôn ngữ lập trình chính của Flutter là gì?", "answers": ["Java", "Swift", "Dart", "C++"], "correctIndex": 2},
+    {"question": "CPU được ví như bộ phận nào của máy tính?", "answers": ["Tim", "Phổi", "Não", "Mắt"], "correctIndex": 2},
+    {"question": "Mạng không dây phổ biến nhất hiện nay là?", "answers": ["Bluetooth", "Wi-Fi", "4G", "NFC"], "correctIndex": 1},
+    {"question": "Đâu là hệ điều hành dành cho thiết bị di động của Google?", "answers": ["iOS", "Windows", "Android", "Linux"], "correctIndex": 2},
+    {"question": "RAM là viết tắt của cụm từ nào?", "answers": ["Read Access Memory", "Random Access Memory", "Real Action Mode", "Rapid Access Memory"], "correctIndex": 1},
+    {"question": "Công ty nào sản xuất iPhone?", "answers": ["Samsung", "Apple", "Xiaomi", "Microsoft"], "correctIndex": 1},
+    {"question": "Phím tắt dùng để copy trên Windows là gì?", "answers": ["Ctrl + V", "Ctrl + X", "Ctrl + C", "Ctrl + Z"], "correctIndex": 2},
+    {"question": "Đơn vị đo dung lượng ổ cứng phổ biến hiện nay là?", "answers": ["MHz", "DPI", "GB/TB", "Pixel"], "correctIndex": 2},
+    {"question": "WWW là viết tắt của?", "answers": ["World Wide Web", "World Wild West", "Web Wide World", "World Website Web"], "correctIndex": 0},
+    {"question": "Trình duyệt web nào do Google phát triển?", "answers": ["Safari", "Firefox", "Edge", "Chrome"], "correctIndex": 3}
+  ]
+}
