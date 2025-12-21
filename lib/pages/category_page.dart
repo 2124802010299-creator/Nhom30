@@ -52,6 +52,7 @@ class CategoryPage extends StatelessWidget {
                       builder: (_) => QuizPage(
                         category: e.value,
                         online: online,
+                        limit: 10,
                       ),
                     ),
                   );

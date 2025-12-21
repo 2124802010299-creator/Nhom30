@@ -6,11 +6,13 @@ import 'result_page.dart';
 class QuizPage extends StatefulWidget {
   final bool online;
   final String category;
+  final int limit; // ✅ SỐ CÂU HỎI
 
   const QuizPage({
     super.key,
     required this.category,
     required this.online,
+    required this.limit,
   });
 
   @override
@@ -50,6 +52,13 @@ class _QuizPageState extends State<QuizPage> {
 
       if (questions.isEmpty) {
         error = 'Không có câu hỏi cho chủ đề này';
+        return;
+      }
+
+      // ✅ RANDOM + GIỚI HẠN SỐ CÂU
+      questions.shuffle();
+      if (widget.limit < questions.length) {
+        questions = questions.take(widget.limit).toList();
       }
     } catch (e) {
       error = 'Lỗi tải câu hỏi';
@@ -126,6 +135,7 @@ class _QuizPageState extends State<QuizPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(error!, style: const TextStyle(color: Colors.red)),
+              const SizedBox(height: 10),
               ElevatedButton(onPressed: load, child: const Text('Thử lại')),
             ],
           ),

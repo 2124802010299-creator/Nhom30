@@ -29,9 +29,6 @@ class HistoryDetailPage extends StatelessWidget {
                       style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                   const SizedBox(height: 10),
                   ...List.generate(q['answers'].length, (idx) {
-                    // Logic màu sắc:
-                    // 1. Nếu là đáp án đúng -> Màu xanh
-                    // 2. Nếu mình chọn sai -> Màu đỏ
                     Color color = Colors.black;
                     IconData? icon;
 

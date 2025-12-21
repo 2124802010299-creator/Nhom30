@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-// ===== THÊM 2 IMPORT NÀY =====
+// ===== AUTH =====
 import '../auth/auth_service.dart';
 import '../auth/login_page.dart';
 
-// ===== IMPORT CŨ =====
+// ===== PAGES =====
 import '../leaderboard/leaderboard_page.dart';
 import 'category_page.dart';
 import 'statistics_page.dart';
@@ -13,27 +13,100 @@ import 'history_page.dart';
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
 
+  // ===== CONFIRM LOGOUT =====
+  Future<void> _confirmLogout(BuildContext context) async {
+    final result = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          title: const Text('Xác nhận đăng xuất'),
+          content: const Text(
+            'Bạn có chắc chắn muốn đăng xuất khỏi tài khoản không?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text('Hủy'),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.redAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onPressed: () => Navigator.pop(context, true),
+              child: const Text('Đăng xuất'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (result == true) {
+      await AuthService().logout();
+      if (!context.mounted) return;
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => const LoginPage()),
+            (route) => false,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       // ===== APPBAR + LOGOUT =====
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(
-            tooltip: 'Đăng xuất',
-            icon: const Icon(Icons.logout),
-            onPressed: () async {
-              await AuthService().logout();
-              if (!context.mounted) return;
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (_) => const LoginPage()),
-                    (route) => false,
-              );
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(30),
+              onTap: () => _confirmLogout(context),
+              child: Container(
+                padding:
+                const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.4),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.15),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: const [
+                    Icon(
+                      Icons.logout,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                    SizedBox(width: 6),
+                    Text(
+                      'Đăng xuất',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -55,8 +128,7 @@ class StartPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
-                  // --- BIỂU TƯỢNG ---
+                  // --- ICON ---
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
@@ -95,7 +167,6 @@ class StartPage extends StatelessWidget {
 
                   const SizedBox(height: 40),
 
-                  // --- MENU ---
                   _menuButton(
                     context,
                     label: 'CHƠI ONLINE',
@@ -141,20 +212,21 @@ class StartPage extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 16),
+
                   _menuButton(
                     context,
                     label: 'BẢNG XẾP HẠNG',
                     icon: Icons.emoji_events,
                     color: Colors.amber,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const LeaderboardPage(),
-                        ),
-                      );
-                    },
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const LeaderboardPage(),
+                      ),
+                    ),
                   ),
+
+                  const SizedBox(height: 16),
 
                   _menuButton(
                     context,
@@ -188,7 +260,7 @@ class StartPage extends StatelessWidget {
     );
   }
 
-  // --- BUTTON BUILDER ---
+  // ===== MENU BUTTON BUILDER =====
   Widget _menuButton(
       BuildContext context, {
         required String label,
