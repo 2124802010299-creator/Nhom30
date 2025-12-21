@@ -6,16 +6,25 @@ class HistoryDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List questions = data['details'];
-    final List userAnswers = data['userAnswers'];
+    final List questions = List.from(data['details'] ?? []);
+    final List userAnswers = List.from(data['userAnswers'] ?? []);
+
+    if (questions.isEmpty) {
+      return const Scaffold(
+        body: Center(child: Text('Không có dữ liệu lịch sử')),
+      );
+    }
 
     return Scaffold(
-      appBar: AppBar(title: Text('Chi tiết: ${data['category']}')),
+      appBar: AppBar(
+        title: Text('Chi tiết: ${data['category'] ?? ''}'),
+      ),
       body: ListView.builder(
         itemCount: questions.length,
         itemBuilder: (ctx, i) {
           final q = questions[i];
-          final int? selected = userAnswers[i];
+          final int? selected =
+          i < userAnswers.length ? userAnswers[i] : null;
           final int correct = q['correctIndex'];
 
           return Card(
@@ -25,27 +34,40 @@ class HistoryDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Câu ${i + 1}: ${q['question']}',
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                  Text(
+                    'Câu ${i + 1}: ${q['content']}',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
                   const SizedBox(height: 10),
-                  ...List.generate(q['answers'].length, (idx) {
-                    Color color = Colors.black;
-                    IconData? icon;
 
-                    if (idx == correct) {
-                      color = Colors.green;
-                      icon = Icons.check_circle;
-                    } else if (idx == selected && selected != correct) {
-                      color = Colors.red;
-                      icon = Icons.cancel;
-                    }
+                  ...List.generate(
+                    (q['options'] as List).length,
+                        (idx) {
+                      Color color = Colors.black;
+                      IconData? icon;
 
-                    return ListTile(
-                      leading: Icon(icon, color: color),
-                      title: Text(q['answers'][idx], style: TextStyle(color: color)),
-                      dense: true,
-                    );
-                  }),
+                      if (idx == correct) {
+                        color = Colors.green;
+                        icon = Icons.check_circle;
+                      } else if (idx == selected && selected != correct) {
+                        color = Colors.red;
+                        icon = Icons.cancel;
+                      }
+
+                      return ListTile(
+                        leading:
+                        icon != null ? Icon(icon, color: color) : null,
+                        title: Text(
+                          q['options'][idx],
+                          style: TextStyle(color: color),
+                        ),
+                        dense: true,
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
